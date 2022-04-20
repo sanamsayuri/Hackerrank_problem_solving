@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int c;
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int k=0;k<n;k++){
+        cin>>arr[k];
+    }
+    
+    for(int i=0;i<n;i++){
+      int c=arr[i]/5;
+      int ct=c+1;
+       if(arr[i]>37){
+           if(ct *5 - arr[i] <=2)
+           arr[i]= ct *5;
+       }
+    }
+
+    for(int j=0;j<n;j++){
+        cout<<arr[j]<<endl;
+    }
+    
+    
+    return 0;
+}

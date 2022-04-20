@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+/*
+ * Complete the 'timeConversion' function below.
+ *
+ * The function is expected to return a STRING.
+ * The function accepts STRING s as parameter.
+ */
+
+string timeConversion(string s) {
+    int n = s.size();
+    if(s[n-2]=='P'){
+            int t = s[0]-'0';
+            int ti = s[1]-'0';
+            int val = t*10+ti;
+            if(val<12){
+                t+=1;
+                ti+=2;
+                s[0] = t+'0';
+                s[1] = ti+'0';               
+            }
+    }
+    else{
+        if(s[0]=='1' and s[1]=='2'){
+            s[0] = '0';
+            s[1] = '0';
+        }
+    }
+    string ans;
+    for(int i=0;i<n-2;i++){
+        ans += s[i];
+    }
+    return ans;
+}
+
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string s;
+    getline(cin, s);
+
+    string result = timeConversion(s);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
